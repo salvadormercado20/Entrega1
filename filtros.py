@@ -6,13 +6,13 @@ import numpy as np
 import pywt
 from scipy import signal
 
-path = 'C:/Users/Lenovo/OneDrive - Instituto Tecnológico Metropolitano/Maestria/Tesis/Señales Tesis/Signals/Patients/P001/'
+path = './'
 
-mat_contents = sio.loadmat(path + 'P001_S0_P2_A5.mat', squeeze_me = True)
+mat_contents = sio.loadmat(path + 'P001_S0_P1', squeeze_me = True)
 
 def bandPass(mat_contents):
-    for i in range(0,4):
-        ACC = mat_contents['Data_ACC'][i]
+    for i in range(1,5):
+        ACC = mat_contents['Data'][i]
         x=ACC.T
         high_cutoff_bp = 1 / (10000 / 2)
         low_cutoff_bp = 300 / (10000 / 2)
@@ -23,8 +23,8 @@ def bandPass(mat_contents):
         plt.plot(ACC)
 
 def lowPass(mat_contents):
-    for i in range(0,4):
-        ACC = mat_contents['Data_ACC'][i]
+    for i in range(1,5):
+        ACC = mat_contents['Data'][i]
         x=ACC.T
         #high_cutoff_bp = 1 / (10000 / 2)
         low_cutoff_bp = 300 / (10000 / 2)
@@ -35,8 +35,8 @@ def lowPass(mat_contents):
         plt.plot(ACC)
         
 def highPass(mat_contents):
-    for i in range(0,4):
-        ACC = mat_contents['Data_ACC'][i]
+    for i in range(1,5):
+        ACC = mat_contents['Data'][i]
         x=ACC.T
         high_cutoff_bp = 1 / (10000 / 2)
         #low_cutoff_bp = 300 / (10000 / 2)
