@@ -1,3 +1,4 @@
+
 import scipy.io as sio
 import matplotlib.pyplot as plt
 
@@ -45,7 +46,3 @@ def highPass(mat_contents):
         plt.figure()
         plt.plot(x_filt)
         plt.plot(ACC)
-
-bandPass(mat_contents)
-lowPass(mat_contents)
-highPass(mat_contents)
